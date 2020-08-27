@@ -1,0 +1,55 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "coinfly",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.26666666666666666,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": "2",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "0f0ed290-d522-4fed-a671-942fe9f39456"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "fea485fb-57ff-4fea-9da2-adb6ad11207f"
+            }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "d98de009-fdd2-440f-8cb8-7a740a7ba92d"
+            }
+          },
+          {
+            "frame": 0.15,
+            "value": {
+              "__uuid__": "367b6bf1-091f-411c-8f92-2c2d823f215f"
+            }
+          },
+          {
+            "frame": 0.2,
+            "value": {
+              "__uuid__": "b7920d1b-6049-4b96-bd9d-3c90afc39c66"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "f0daa33f-b46b-45b0-942f-f094566b55c3"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}
