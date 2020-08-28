@@ -8,6 +8,7 @@ cc.Class({
         bg: cc.Node,
         mask: cc.Node,
         mirrorBg: cc.Node,
+        slider: cc.Node,
     },
 
     onLoad() {
@@ -27,36 +28,34 @@ cc.Class({
     touchStart(e) {
         let pos = this.node.convertToNodeSpaceAR(e.getLocation())
         this.mask.setPosition(pos)
-        this.show()
+        this.setMirrirBg()
     },
 
     touchMove(e) {
         let pos = this.node.convertToNodeSpaceAR(e.getLocation())
         this.mask.setPosition(pos)
-        this.show()
+        this.setMirrirBg()
     },
 
     sliderMove(e) {
         this.multiple = Min_Multiple + e.progress * (Max_Multiple - Min_Multiple)
         this.setMirrirBg()
-        this.show()
     },
 
     onenter() {
         this.multiple = Min_Multiple
         this.setMirrirBg()
-        this.show()
     },
 
     setMirrirBg() {
+        // 显示当前放大镜的倍数
+        this.slider.getChildByName('val').getComponent(cc.Label).string = `放大倍数:${this.multiple.toFixed(2).toString()}`
         // 设置放大镜的倍数
         this.mirrorBg.width = this.bg.width
         this.mirrorBg.height = this.bg.height
         this.mirrorBg.scaleX = this.multiple
         this.mirrorBg.scaleY = this.multiple
-    },
-
-    show() {
+        // 设置背景图的位置
         this.mirrorBg.x = -this.mask.x * this.multiple
         this.mirrorBg.y = -this.mask.y * this.multiple
     },
