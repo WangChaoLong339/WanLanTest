@@ -2,6 +2,7 @@ const testList = [
     { name: 'Scraping', describe: '刮刮卡' },
     { name: 'CoinFly', describe: '飞金币' },
     { name: 'Magnifier', describe: '放大镜' },
+    { name: 'Lerp', describe: '插值运动' },
 ]
 
 cc.Class({

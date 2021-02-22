@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "0fde1ce9-edf4-4edf-a09b-a4ce6c1e5e21",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 128,
+  "height": 256,
+  "platformSettings": {},
   "subMetas": {
     "goldAnim": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "7805a5bc-6675-48c9-83d9-36689c446ef5",
       "rawTextureUuid": "0fde1ce9-edf4-4edf-a09b-a4ce6c1e5e21",
       "trimType": "auto",
