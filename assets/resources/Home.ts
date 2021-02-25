@@ -31,19 +31,20 @@ export default class NewClass extends cc.Component {
     }
 
     showPrefab(name) {
+        cc.log(`open prefab: ${name}`)
         let pb: any = this.node.getChildByName(name)
         if (pb) {
             pb.active = true
             pb.onenter()
-            return
+        } else {
+            cc.resources.load(`prefab/${name}/${name}`, cc.Prefab, (err, prefab) => {
+                if (err) return cc.error(err)
+                pb = cc.instantiate(prefab)
+                pb.parent = this.node
+                pb.active = true
+                pb.onenter()
+            })
         }
-        cc.resources.load(`prefab/${name}/${name}`, null, (err, prefab) => {
-            if (err) return cc.error(err)
-            pb = cc.instantiate(prefab)
-            pb.parent = this.node
-            pb.active = true
-            pb.onenter()
-        })
     }
 
     btnItem(e) {
