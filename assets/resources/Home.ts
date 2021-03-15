@@ -6,7 +6,6 @@ const testList = [
     { name: 'Block', describe: '色块复位' },
 ]
 
-
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -17,8 +16,11 @@ export default class NewClass extends cc.Component {
     @property(cc.Node)
     item: cc.Node = null
 
-    lastPbName: String
     onLoad() {
+        this.createExampleCase()
+    }
+
+    createExampleCase() {
         this.scorllview.content.removeAllChildren()
         for (let i = 0; i < testList.length; i++) {
             let item: any = cc.instantiate(this.item)
@@ -26,30 +28,10 @@ export default class NewClass extends cc.Component {
             item.idx = i
             item.getChildByName('val').getComponent(cc.Label).string = testList[i].describe
         }
-
-        this.lastPbName = ''
-    }
-
-    showPrefab(name) {
-        cc.log(`open prefab: ${name}`)
-        let pb: any = this.node.getChildByName(name)
-        if (pb) {
-            pb.active = true
-            pb.onenter()
-        } else {
-            cc.resources.load(`prefab/${name}/${name}`, cc.Prefab, (err, prefab) => {
-                if (err) return cc.error(err)
-                pb = cc.instantiate(prefab)
-                pb.parent = this.node
-                pb.active = true
-                pb.onenter()
-            })
-        }
     }
 
     btnItem(e) {
         let idx = e.target.idx
-
-        this.showPrefab(testList[idx].name)
+        UiMgr.open(testList[idx].name)
     }
 }

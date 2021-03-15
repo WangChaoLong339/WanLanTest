@@ -4539,11 +4539,6 @@ declare namespace cc {
 		获取更改透明度时是否修改RGB值。 
 		*/
 		isOpacityModifyRGB(): boolean;	
-
-		/**
-		 * 自定义扩展 
-		 */
-		onenter(data?: any): void;
 	}	
 	/** !#en
 	Class of private entities in Cocos Creator scenes.<br/>
