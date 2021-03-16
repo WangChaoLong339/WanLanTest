@@ -95,7 +95,7 @@ export default class Lerp extends cc.Component {
     }
 
     btnCLose() {
-        this.node.active = false
+        UiMgr.close(this)
     }
 
     update(dt) {

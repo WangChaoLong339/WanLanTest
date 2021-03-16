@@ -79,7 +79,7 @@ const IDX_TO_COLOR = [
 const { ccclass, property } = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class Block extends cc.Component {
 
     @property(cc.Node)
     changeBtnContent: cc.Node = null
@@ -245,9 +245,6 @@ export default class NewClass extends cc.Component {
     }
 
     btnClose() {
-        // 这里比较特殊 有一个定时器需要关闭
-        clearInterval(this.countdownTimer)
-        cc.log(typeof this)
-        UiMgr.close(this)
+        UiMgr.close(this, () => { clearInterval(this.countdownTimer) })
     }
 }

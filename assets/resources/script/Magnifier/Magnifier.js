@@ -61,6 +61,6 @@ cc.Class({
     },
 
     btnClose() {
-        this.node.active = false
+        UiMgr.close(this)
     },
 });

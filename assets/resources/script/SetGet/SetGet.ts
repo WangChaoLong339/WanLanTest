@@ -11,7 +11,6 @@ export default class SetGet extends cc.Component {
     }
 
     btnClose() {
-        this.node.active = false
         UiMgr.close(this)
     }
 }

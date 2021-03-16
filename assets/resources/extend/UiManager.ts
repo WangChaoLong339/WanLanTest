@@ -20,7 +20,7 @@ export class UiManager extends cc.Component {
 
     open(name, args?) {
         cc.log(`open prefab: ${name}`)
-        let pb: any = this.uiPrefabCache[name]
+        let pb = this.uiPrefabCache[name]
         if (pb) {
             pb.active = true
             pb.onenter(args)
@@ -36,7 +36,7 @@ export class UiManager extends cc.Component {
         }
     }
 
-    close(args) {
+    close(args, callback?) {
         let name = args
         if (typeof args == 'object') {
             name = args.node.name
@@ -44,6 +44,7 @@ export class UiManager extends cc.Component {
 
         cc.log(`close prefab: ${name}`)
         if (this.uiPrefabCache[name]) {
+            callback && callback()
             this.uiPrefabCache[name].active = false
         }
     }
