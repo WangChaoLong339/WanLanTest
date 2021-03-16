@@ -4,6 +4,7 @@ const testList = [
     { name: 'Magnifier', describe: '放大镜' },
     { name: 'Lerp', describe: '插值运动' },
     { name: 'Block', describe: '色块复位' },
+    { name: 'SetGet', describe: '属性设置' },
 ]
 
 const { ccclass, property } = cc._decorator;
