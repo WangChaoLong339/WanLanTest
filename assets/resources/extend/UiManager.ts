@@ -23,7 +23,7 @@ export class UiManager extends cc.Component {
         let pb = this.uiPrefabCache[name]
         if (pb) {
             pb.active = true
-            pb.onenter(args)
+            pb.onenter && pb.onenter(args)
         } else {
             cc.resources.load(`prefab/${name}/${name}`, cc.Prefab, (err, prefab) => {
                 if (err) return cc.error(err)
@@ -31,21 +31,22 @@ export class UiManager extends cc.Component {
                 pb.parent = this.node
                 this.uiPrefabCache[name] = pb
                 pb.active = true
-                pb.onenter(args)
+                pb.onenter && pb.onenter(args)
             })
         }
     }
 
-    close(args, callback?) {
+    close(args) {
         let name = args
         if (typeof args == 'object') {
             name = args.node.name
         }
 
         cc.log(`close prefab: ${name}`)
-        if (this.uiPrefabCache[name]) {
-            callback && callback()
-            this.uiPrefabCache[name].active = false
+        let panel = this.uiPrefabCache[name]
+        if (panel) {
+            panel.onleave && panel.onleave()
+            panel.active = false
         }
     }
 }

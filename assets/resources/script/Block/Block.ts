@@ -100,6 +100,7 @@ export default class Block extends cc.Component {
 
     onLoad() {
         this.node.onenter = this.onenter.bind(this)
+        this.node.onleave = this.onleave.bind(this)
     }
 
     selectIdx: any
@@ -115,6 +116,10 @@ export default class Block extends cc.Component {
         this.cumulativeLabel.string = `游戏用时:${this.cumulative}s`
         this.itemContent.removeAllChildren()
         this.hideGameResult()
+    }
+
+    onleave() {
+        clearInterval(this.countdownTimer)
     }
 
     checkEvent(e, data) {
@@ -245,6 +250,6 @@ export default class Block extends cc.Component {
     }
 
     btnClose() {
-        UiMgr.close(this, () => { clearInterval(this.countdownTimer) })
+        UiMgr.close(this)
     }
 }

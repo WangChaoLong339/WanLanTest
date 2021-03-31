@@ -5,6 +5,7 @@ const testList = [
     { name: 'Lerp', describe: '插值运动' },
     { name: 'Block', describe: '色块复位' },
     { name: 'SetGet', describe: '属性设置' },
+    { name: 'BlockHome', describe: '色块归位' },
 ]
 
 const { ccclass, property } = cc._decorator;
@@ -18,6 +19,7 @@ export default class NewClass extends cc.Component {
     item: cc.Node = null
 
     onLoad() {
+        // 创建测试用例
         this.createExampleCase()
     }
 
