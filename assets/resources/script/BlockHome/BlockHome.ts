@@ -1,17 +1,7 @@
-const ColorConfig = [
-    /* 红 */ { id: 0, color: cc.color(255, 0, 0) },
-    /* 橙 */ { id: 0, color: cc.color(255, 125, 0) },
-    /* 黄 */ { id: 0, color: cc.color(255, 255, 0) },
-    /* 绿 */ { id: 0, color: cc.color(0, 255, 0) },
-    /* 青 */ { id: 0, color: cc.color(0, 255, 255) },
-    /* 蓝 */ { id: 0, color: cc.color(0, 0, 255) },
-    /* 紫 */ { id: 0, color: cc.color(255, 0, 255) },
-]
-
-// 单个瓶子最大容量
-const Max_Bottle_Volume = 5
 // 瓶子最大数量
 const Max_Bottle_Count = 3
+// 单个瓶子最大容量
+const Max_Bottle_Volume = 5
 
 const { ccclass, property } = cc._decorator;
 
@@ -73,6 +63,9 @@ export default class BlockHome extends cc.Component {
             cloneBottle.x = (i - 1) * 200
             cloneBottle.parent = this.bottleContent
         }
+    }
+
+    btnBlockItem(e) {
     }
 
     btnClose() {

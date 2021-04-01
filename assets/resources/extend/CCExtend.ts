@@ -21,3 +21,5 @@ cc.Node.prototype.EachChild = function (cb) {
         cb(child, idx)
     })
 }
+
+cc.Color.prototype.VIOLET = cc.color(255, 0, 255)

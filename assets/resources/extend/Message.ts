@@ -1,20 +1,10 @@
-const { ccclass, property } = cc._decorator;
-
-@ccclass
-export class GlobalMessage extends cc.Component {
+export class Message {
     // 自增ID
-    msgID: number
+    msgID = 0
     // 监听者列表
-    msgList: any
+    msgList = []
     // 事件列表
-    listenerMap: object
-    onLoad() {
-        window.GlobalMsg = this
-
-        this.msgID = 0
-        this.msgList = []
-        this.listenerMap = {}
-    }
+    listenerMap = {}
 
     // 增加消息监听
     addListener(msgType, callback, target) {
@@ -99,3 +89,5 @@ export class GlobalMessage extends cc.Component {
         }
     }
 };
+
+window.Message = new Message()
