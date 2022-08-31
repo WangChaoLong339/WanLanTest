@@ -15,6 +15,11 @@ export class Constant {
         { name: 'Block', describe: '色块复位' },
         { name: 'SetGet', describe: '属性设置' },
         { name: 'BlockHome', describe: '色块归位' },
+        { name: 'PageViewTest', describe: '动态添加翻页容器' },
+        { name: 'PageViewLoop', describe: '翻页容器循环' },
+        { name: 'Shader', describe: '着色器' },
+        { name: 'PageEffect', describe: '翻页特效' },
+        { name: 'Web', describe: '网页测试' },
     ]
 }
 

@@ -5,6 +5,7 @@ export default class NewClass extends cc.Component {
 
     @property(cc.ScrollView)
     scorllview: cc.ScrollView = null
+
     @property(cc.Node)
     item: cc.Node = null
 

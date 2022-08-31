@@ -1,5 +1,5 @@
 cc.Node.prototype.PathChild = function (path, componentName?) {
-    let names = path.splice('/')
+    let names = path.split('/')
 
     let node = null
     for (let i = 0; i < names.length; i++) {
